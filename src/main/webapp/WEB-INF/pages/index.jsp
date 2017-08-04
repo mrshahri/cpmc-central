@@ -82,7 +82,7 @@
     </nav>
 
     <article class="article" id="article">
-        <h3>Test artcle</h3>
+        <h3>CPMC Services Thumbnails willl be here</h3>
         <p>
             Test article
         </p>
