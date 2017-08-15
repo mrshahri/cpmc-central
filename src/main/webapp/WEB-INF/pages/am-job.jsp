@@ -161,13 +161,13 @@
         container = document.getElementById('article');
 
         camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 2000);
-        camera.position.set(0, 0, 50);
+        camera.position.set(0, 0, 450);
 
         scene = new THREE.Scene();
 
         // object
         var loader = new THREE.STLLoader();
-        loader.load('<c:url value="/resources/models/dragon.stl"/>', function (geometry) {
+        loader.load('<c:url value="/resources/models/BowdenMeshCableClip.stl"/>', function (geometry) {
 //            var material = new THREE.MeshLambertMaterial({ambient: 0xFBB917, color: 0xf2f2f2});
             var material=new THREE.MeshLambertMaterial({color:0x909090, overdraw: 1, wireframe: false,
                 shading:THREE.FlatShading, vertexColors: THREE.FaceColors});
@@ -177,7 +177,7 @@
 
 
         // STL file to be loaded
-        loader.load('<c:url value="/resources/models/dragon.stl"/>');
+        loader.load('<c:url value="/resources/models/BowdenMeshCableClip.stl"/>');
 
         // lights
         scene.add(new THREE.AmbientLight(0x736F6E));
