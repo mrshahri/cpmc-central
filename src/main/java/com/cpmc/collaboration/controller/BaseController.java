@@ -1,7 +1,7 @@
-package com.cpmc.central.controller;
+package com.cpmc.collaboration.controller;
 
-import com.cpmc.central.models.DeviceOperation;
-import com.cpmc.central.models.Operations;
+import com.cpmc.collaboration.models.DeviceOperation;
+import com.cpmc.collaboration.models.Operations;
 import com.google.gson.Gson;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
@@ -37,6 +37,7 @@ public class BaseController {
     @RequestMapping(value = "/am-job", method = RequestMethod.GET)
     public String getDeviceParametersPage(@RequestParam("operationId") String operationId, ModelMap model) {
         String probeUrl = "http://uaf132854.ddns.uark.edu:9002/virtualization-uark/probe?deviceId=Ultimaker01";
+//        String probeUrl = "http://localhost:9002/virtualization-uark/probe?deviceId=Ulwtimaker01";
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet httpGet = new HttpGet(probeUrl);
         HttpResponse httpResponse = null;
@@ -57,7 +58,7 @@ public class BaseController {
             e.printStackTrace();
         }
 //        model.addAttribute("postUrl", "http://uaf132854.ddns.uark.edu:8100/app-ultimaker/operate-device");
-        model.addAttribute("postUrl", "http://localhost:8200/cpmc-central/operate-device");
+        model.addAttribute("postUrl", "http://localhost:8300/cpmc-collaboration/operate-device");
         return "am-job";
     }
 

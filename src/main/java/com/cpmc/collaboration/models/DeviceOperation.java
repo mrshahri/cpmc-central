@@ -1,4 +1,4 @@
-package com.cpmc.central.models;
+package com.cpmc.collaboration.models;
 
 import java.util.ArrayList;
 import java.util.List;
