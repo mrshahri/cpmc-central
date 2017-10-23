@@ -2,11 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-    <title>Collaborative Manufacturing</title>
-=======
     <title>CoreXZ 3D Printing</title>
->>>>>>> Getting ready for Demo
     <style>
         .flex-container {
             display: -webkit-flex;
@@ -24,10 +20,7 @@
 
         .article {
             text-align: center;
-<<<<<<< HEAD
             background: #ebe5ff;
-=======
->>>>>>> Getting ready for Demo
         }
 
         .aside {
@@ -41,20 +34,12 @@
         }
 
         header {
-<<<<<<< HEAD
-            background: maroon;
-=======
             background: purple;
->>>>>>> Getting ready for Demo
             color: white;
         }
 
         footer {
-<<<<<<< HEAD
-            background: darkslategray;
-=======
             background: darkblue;
->>>>>>> Getting ready for Demo
             color: white;
         }
 
@@ -92,6 +77,7 @@
                 order: 3;
             }
         }
+
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
@@ -122,26 +108,12 @@
             var parameters = [];
 
             <c:forEach var="parameter" items="${parameters}">
-                parameters.push({
-                    id: "${parameter.id}", name: "", type: "value",
-                    value: document.getElementById("${parameter.id}").value, restAttributes: {}
-                });
-                <%--parametersObj.parameters["${parameter.id}"] = document.getElementById("${parameter.id}").value;--%>
+            parameters.push({
+                id: "${parameter.id}", name: "", type: "value",
+                value: document.getElementById("${parameter.id}").value, restAttributes: {}
+            });
+            <%--parametersObj.parameters["${parameter.id}"] = document.getElementById("${parameter.id}").value;--%>
             </c:forEach>
-            // FOR DEMO
-            <%--parameters.push({--%>
-            <%--id: "${parameter.id}", name: "", type: "value",--%>
-            <%--value: document.getElementById("${parameter.id}").value, restAttributes: {}--%>
-            <%--});--%>
-            <%--parameters.push({--%>
-            <%--id: "${parameter.id}", name: "", type: "value",--%>
-            <%--value: document.getElementById("${parameter.id}").value, restAttributes: {}--%>
-            <%--});--%>
-            <%--parameters.push({--%>
-            <%--id: "${parameter.id}", name: "", type: "value",--%>
-            <%--value: document.getElementById("${parameter.id}").value, restAttributes: {}--%>
-            <%--});--%>
-            // END
 
             parametersObj.parameters = parameters;
             var requestBody = JSON.stringify(parametersObj);
@@ -157,41 +129,6 @@
             });
         }
 
-<<<<<<< HEAD
-        function bringMonitorData() {
-            var ultimakerStatusArray = {}, xcarveStatusArray = {}, uarmStatusArray = {};
-
-            $.ajax({
-                url: "http://uaf132854.ddns.uark.edu:9002/virtualization-uark/monitor?deviceId=Ultimaker01",
-                dataType: "json",
-                success: function (data) {
-                },
-                complete: function (data) {
-                    ultimakerStatusArray = $.parseJSON(data.responseText);
-                    if (ultimakerStatusArray["availability"] === "BUSY") {
-                        bindTableHtml(ultimakerStatusArray);
-                    }
-                },
-                timeout: 20000  // two minutes
-            });
-
-            $.ajax({
-                url: "http://uaf132854.ddns.uark.edu:9002/virtualization-uark/monitor?deviceId=Uarm",
-                dataType: "json",
-                success: function (data) {
-                },
-                complete: function (data) {
-                    uarmStatusArray = $.parseJSON(data.responseText);
-                    if (uarmStatusArray["availability"] === "BUSY") {
-                        bindTableHtml(uarmStatusArray);
-                    }
-                },
-                timeout: 20000  // two minutes
-            });
-
-            $.ajax({
-                url: "http://uaf132854.ddns.uark.edu:9002/virtualization-uark/monitor?deviceId=CNC",
-=======
         function sendStop() {
             var parametersObj = {deviceId: "${deviceId}", operationId: "stopJob", parameters: []};
             var requestBody = JSON.stringify(parametersObj);
@@ -210,28 +147,17 @@
         function bringMonitorData() {
             $.ajax({
                 url: "http://uaf132854.ddns.uark.edu:9002/virtualization-uark/monitor?deviceId=CoreXZ",
->>>>>>> Getting ready for Demo
                 dataType: "json",
                 success: function (data) {
                 },
                 complete: function (data) {
                     xcarveStatusArray = $.parseJSON(data.responseText);
-<<<<<<< HEAD
-                    if (xcarveStatusArray["availability"] === "RUN") {
-                        bindTableHtml(xcarveStatusArray);
-                    }
-=======
                     bindTableHtml(xcarveStatusArray);
->>>>>>> Getting ready for Demo
                 },
                 timeout: 20000  // two minutes
             });
         }
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> Getting ready for Demo
         function bindTableHtml(statusArray) {
             var tableHtml = document.getElementById("monitorTable");
             tableHtml.innerHTML = "";
@@ -243,13 +169,10 @@
             }
         }
 
-<<<<<<< HEAD
         function idleTable() {
             document.getElementById("monitorTable").innerHTML = "No operations goin on";
         }
 
-=======
->>>>>>> Getting ready for Demo
         window.setInterval(bringMonitorData, 1000);
     </script>
 
@@ -260,21 +183,6 @@
 
 <div class="flex-container">
     <header>
-<<<<<<< HEAD
-        <h1>CPMC Collaborative Manufacturing</h1>
-        <h5>Combined manufacturing scenario of a Ultimaker 3D printer, a UARM Robot and a X-Carve CNC</h5>
-    </header>
-
-<%--
-    <nav class="nav">
-        <ul>
-            &lt;%&ndash;<li><a href="#">CPMC Services</a></li>&ndash;%&gt;
-            &lt;%&ndash;<li><a href="http://localhost:1080/am-broker/home.htm">Collaboration Home</a></li>&ndash;%&gt;
-            <li><a href="#">Collaboration Home</a></li>
-        </ul>
-    </nav>
---%>
-=======
         <%--<h1>CPMC 3D Printing</h1>--%>
         <h1>CoreXZ 3D Printing</h1>
     </header>
@@ -287,29 +195,9 @@
             </ul>
         </nav>
     --%>
->>>>>>> Getting ready for Demo
-
-    <article class="article" id="article">
-        <img src="<c:url value="/resources/images/collab.bmp"/>">
-    </article>
+    <article class="article" id="article"></article>
 
     <aside class="article" style="text-align: center">
-<<<<<<< HEAD
-        <h2>Print Model Object</h2>
-        <p>
-        <h5>Operation Id: </h5>
-        <input type="text" style="text-align: center" disabled="disabled" name="${operationId}" value="${operationId}" id="${operationId}"/>
-        </p>
-        <c:forEach var="parameter" items="${parameters}">
-            <p>
-            <h5>${parameter.name} (${parameter.type}) :</h5>
-            <input style="text-align: center" type="text" name="${parameter.id}" id="${parameter.id}"/>
-            </p>
-        </c:forEach>
-
-        <p>
-            <input style="text-align: center" type="submit" value="Print" onclick="sendParameters()"/>
-=======
         <h2 class="w3-center">Print Model Object</h2>
         <p>
         <h5>Operation Id: </h5>
@@ -349,15 +237,7 @@
 
         <p>
             <input style="text-align: center" type="submit" value="Stop" onclick="sendStop()"/>
->>>>>>> Getting ready for Demo
         </p>
-
-    </aside>
-
-    <aside class="article">
-        <h3>Monitor Machine Status</h3>
-        <table id="monitorTable">
-        </table>
     </aside>
 
     <aside class="article">
@@ -369,7 +249,7 @@
     <footer>Copyright &copy; University of Arkansas</footer>
 </div>
 
-<%--<script>
+<script>
     /*GUI Coding*/
     var container, camera, scene, renderer, controls;
 
@@ -380,11 +260,7 @@
         container = document.getElementById('article');
 
         camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-<<<<<<< HEAD
-        camera.position.set(50, 50, 50);
-=======
         camera.position.set(50, 0, 50);
->>>>>>> Getting ready for Demo
 
         scene = new THREE.Scene();
 
@@ -450,7 +326,7 @@
         renderer.render(scene, camera);
         renderer.setClearColor(0xf5f5f5, 1);
     }
-</script>--%>
+</script>
 
 </body>
 </html>

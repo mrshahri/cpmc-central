@@ -1,4 +1,4 @@
-package com.cpmc.collaboration.models;
+package com.cpmc.central.models;
 
 import java.util.HashMap;
 
