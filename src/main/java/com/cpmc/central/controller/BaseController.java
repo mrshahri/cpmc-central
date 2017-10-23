@@ -58,7 +58,7 @@ public class BaseController {
             e.printStackTrace();
         }
 //        model.addAttribute("postUrl", "http://uaf132854.ddns.uark.edu:8100/app-ultimaker/operate-device");
-        model.addAttribute("postUrl", "http://localhost:8200/cpmc-central/operate-device");
+        model.addAttribute("postUrl", "http://uaf132854.ddns.uark.edu:8200/cpmc-central/operate-device");
         return "am-job";
     }
 
