@@ -1,2 +1,0 @@
-# cpmc-central
-central app
